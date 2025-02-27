@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ya53re26f-nodejs-gitops
+  description: This is GitOps manifest for ya53re26f-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ya53re26f-nodejs
+    backstage.io/kubernetes-id: ya53re26f-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ya53re26f-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ya53re26f-nodejs
